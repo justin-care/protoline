@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { describe, it, expect } from "vitest";
-import { Card } from "../../../packages/ui/src/Card";
+import { Card } from "../src/Card";
 
 describe("Card component", () => {
   const props = {

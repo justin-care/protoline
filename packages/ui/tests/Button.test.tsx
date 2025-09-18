@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { vi } from "vitest";
-import { Button } from "../../../packages/ui/src/Button";
+import { describe, it, expect, vi } from 'vitest';
+import { Button } from "../src/Button";
 
 describe("Button", () => {
   it("renders the button with label", () => {

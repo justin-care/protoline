@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import TokenInspector from '../../../packages/ui/src/TokenInspector';
+import {TokenInspector} from '../src/TokenInspector';
 
 describe('TokenInspector', () => {
   it('renders the provided category', () => {

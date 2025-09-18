@@ -3,7 +3,6 @@ import fs from "fs";
 import path, { resolve } from "path";
 import {ChatOpenAI} from "@langchain/openai";
 import {configDotenv} from "dotenv";
-import {JsonOutputParser} from "@langchain/core/output_parsers";
 import { fileURLToPath } from 'url';
 
 
@@ -17,7 +16,6 @@ const generate = async (componentPath: string) => {
         docs: string;
     }
 
-    const parser = new JsonOutputParser();
     const llm = new ChatOpenAI({
     apiKey: process.env.OPENAI_API_KEY,
     model: "gpt-5-mini",
@@ -25,6 +23,7 @@ const generate = async (componentPath: string) => {
     });
 
     const storybookDir = path.resolve("storybook/src/stories/");
+    const testDir = path.resolve("packages/ui/tests/");
     // --- 1. Find changed/target component(s) ---
     if (!componentPath) {
     console.error("no component path provided");
@@ -177,7 +176,7 @@ const generate = async (componentPath: string) => {
     // --- 4. Write files ---
     const baseDir = path.dirname(componentPath);
     fs.writeFileSync(path.join(storybookDir, `${componentName}.stories.tsx`), stories);
-    fs.writeFileSync(path.join(storybookDir, `${componentName}.test.tsx`), test);
+    fs.writeFileSync(path.join(testDir, `${componentName}.test.tsx`), test);
 
     const docsDir = path.resolve("docs/docs/components");
     if (!fs.existsSync(docsDir)) fs.mkdirSync(docsDir, { recursive: true });
