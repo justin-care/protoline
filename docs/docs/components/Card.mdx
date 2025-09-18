@@ -1,0 +1,42 @@
+import React from 'react';
+import { Card } from "../../../packages/ui/src/Card";
+
+---
+
+title: Card
+---
+
+# Card
+
+The Card component is a simple presentational component used to display an image, a title, and a short description. It is intended for use in lists, galleries, or content previews.
+
+## Example
+
+<Card
+  title="Example Card"
+  description="This is an example of the Card component used inside documentation." 
+  image="https://via.placeholder.com/600x300"
+/>
+
+```jsx
+import { Card } from "../../../packages/ui/src/Card";
+
+export default function Example() {
+  return (
+    <Card
+      title="Hello World"
+      description="A short description for the card."
+      image="https://via.placeholder.com/600x300"
+    />
+  );
+}
+```
+
+## Props
+
+| Name | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| title | string | The title text displayed on the card. | — |
+| description | string | A short description or summary shown under the title. | — |
+| image | string | URL of the image displayed at the top (or side) of the card. | — |
+

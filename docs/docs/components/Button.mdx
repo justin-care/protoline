@@ -1,0 +1,31 @@
+# Button
+
+import { Button } from "../../../packages/ui/src/Button";
+
+The Button component is a simple, accessible button that renders a label and can call an optional click handler when activated. It's suitable for primary actions and small UI controls.
+
+## Example
+
+```tsx
+import React from 'react';
+import { Button } from "../../../packages/ui/src/Button";
+
+export default function Example() {
+  return (
+    <div>
+      <Button label="Click me" onClick={() => console.log('clicked')} />
+    </div>
+  );
+}
+```
+
+Rendered example:
+
+<Button label="Click me" onClick={() => console.log('clicked from docs')} />
+
+## Props
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| label | `string` | — | The text displayed inside the button. |
+| onClick | `(() => void) | undefined` | `undefined` | Optional click handler called when the user clicks the button. |

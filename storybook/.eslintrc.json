@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "jsx-a11y"
+  ],
+  "rules": {
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/no-autofocus": "warn"
+  }
+}

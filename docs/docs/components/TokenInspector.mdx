@@ -1,0 +1,35 @@
+# TokenInspector
+
+import TokenInspector from '../../../packages/ui/src/TokenInspector';
+
+TokenInspector is a small utility component that displays design tokens grouped by category. It accepts a single prop, `category`, which tells the component which token group to show. Use this component in style guides, token browsers, or documentation pages to inspect a specific token category.
+
+## Example
+
+```jsx
+import React from 'react';
+import TokenInspector from '../../../packages/ui/src/TokenInspector';
+
+export default function Example() {
+  return (
+    <div style={{ padding: 20 }}>
+      <h3>Colors</h3>
+      <TokenInspector category="colors" />
+
+      <h3 style={{ marginTop: 24 }}>Spacing</h3>
+      <TokenInspector category="spacing" />
+    </div>
+  );
+}
+```
+
+You can also render the component inline in MDX:
+
+<TokenInspector category="colors" />
+
+## Props
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| category | string | — | The token category to inspect (e.g. "colors", "spacing", "typography"). Required. |
+

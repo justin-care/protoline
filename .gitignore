@@ -1,0 +1,51 @@
+# Root dependencies
+/node_modules
+/pnpm-lock.yaml
+
+# Build artifacts
+/packages/*/dist
+/packages/*/storybook-static
+/docs/build
+
+# Logs
+*.log
+*.log.*
+logs/
+pnpm-debug.log*
+lerna-debug.log
+yarn-error.log
+
+# Playwright & Vitest outputs
+/packages/*/playwright-report
+/packages/*/test-results
+/packages/*/.vitest
+/packages/*/coverage
+/packages/**/__snapshots__
+/**/__snapshots__
+
+# Coverage (root-level, if ever used)
+coverage/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+
+# IDE settings
+.vscode/
+.idea/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+
+# Cache files
+.pnpm-store
+
+packages/*/node_modules
+
+/build
+/docs/node_modules

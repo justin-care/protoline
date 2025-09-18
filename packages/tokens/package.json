@@ -1,0 +1,22 @@
+{
+    "name": "@protoline/tokens",
+    "version": "0.1.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "type": "module",
+    "scripts": {
+      "build": "node build.js",
+      "watch": "chokidar 'tokens.json' -c pnpm build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.15.1",
+    "devDependencies": {
+      "chokidar-cli": "^3.0.0",
+      "concurrently": "^9.2.1",
+      "style-dictionary": "^5.0.4"
+    }
+  }
+  

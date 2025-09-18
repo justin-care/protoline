@@ -1,0 +1,43 @@
+{
+  "name": "protoline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "tokens:watch": "pnpm --filter @protoline/tokens watch",
+    "storybook": "pnpm --filter @protoline/storybook storybook dev -p 6006",
+    "storybook:serve": "serve build/storybook -p 6006 &",
+    "dev": "concurrently -n TOKENS,STORYBOOK \"pnpm tokens:watch\" \"pnpm storybook\"",
+    "docs": "pnpm --dir docs start",
+    "docs:serve": "serve build/docs",
+    "ci:test:visual": "pnpm --filter @protoline/storybook exec playwright test --headed",
+    "ci:build": "pnpm --filter @protoline/tokens build && pnpm --filter @protoline/ui build",
+    "ci:test": "pnpm --filter @protoline/ui test && pnpm ci:test:visual",
+    "ci:docs": "pnpm --dir docs build",
+    "ci:storybook": "pnpm --filter @protoline/storybook build-storybook",
+    "ci:deploy": "pnpm ci:build && pnpm ci:storybook && pnpm ci:test:visual && pnpm ci:docs",
+    "generate:dry": "pnpm tsx scripts/generate-missing.ts packages/ui/src --dry-run",
+    "generate": "pnpm tsx scripts/generate-missing.ts packages/ui/src --generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.15.1",
+  "devDependencies": {
+    "@langchain/core": "^0.3.76",
+    "@langchain/google-genai": "^0.2.18",
+    "@langchain/openai": "1.0.0-alpha.1",
+    "concurrently": "^9.2.1",
+    "dotenv": "^17.2.2",
+    "langchain": "1.0.0-alpha.6",
+    "serve": "^14.2.5",
+    "ts-morph": "^27.0.0",
+    "tsx": "^4.20.5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@langchain/core": "^0.3.76"
+    }
+  }
+}
